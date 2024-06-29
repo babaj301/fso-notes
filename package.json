@@ -8,20 +8,26 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "nodemon --inspect index.js"
+    "debug": "nodemon --inspect index.js",
+    "lint": "eslint ."
   },
   "author": "Babajide Oluwaferanmi",
   "license": "MIT",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.4",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "@stylistic/eslint-plugin-js": "^2.3.0",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
+    "eslint": "^9.6.0",
+    "globals": "^15.6.0",
     "nodemon": "^3.1.4"
   }
 }
