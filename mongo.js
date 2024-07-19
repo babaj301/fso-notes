@@ -1,12 +1,14 @@
-const mongoose = require("mongoose");
+require('dotenv').config;
+const mongoose = require('mongoose');
+const config = require('./utils/config');
 
 if (process.argv.length < 3) {
-  console.log("give password as argument");
+  console.log('give password as argument');
   process.exit(1);
 }
 
-const url = process.env.MONGODB_URL;
-mongoose.set("strictQuery", false);
+const url = process.env.TEST_MONGODB_URL;
+mongoose.set('strictQuery', false);
 
 mongoose.connect(url);
 
@@ -15,15 +17,15 @@ const noteSchema = new mongoose.Schema({
   important: Boolean,
 });
 
-const Note = mongoose.model("Note", noteSchema);
+const Note = mongoose.model('Note', noteSchema);
 
 const note = new Note({
-  content: `Mongoose is hard`,
+  content: `CSS is easy`,
   important: true,
 });
 
 note.save().then((result) => {
-  console.log("note saved!");
+  console.log('note saved!');
   mongoose.connection.close();
 });
 
